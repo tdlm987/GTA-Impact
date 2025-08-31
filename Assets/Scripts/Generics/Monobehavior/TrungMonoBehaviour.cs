@@ -13,10 +13,15 @@ public class TrungMonoBehaviour : MonoBehaviour
     {
 
     }
+    protected virtual void OnDisable()
+    {
+
+    }
     protected virtual void Start()
     {
 
     }
+    
     protected virtual void LoadComponents()
     {
 
@@ -29,9 +34,5 @@ public class TrungMonoBehaviour : MonoBehaviour
     protected virtual void ResetValue()
     {
         
-    }
-    protected virtual void OnDisable()
-    {
-
     }
 }

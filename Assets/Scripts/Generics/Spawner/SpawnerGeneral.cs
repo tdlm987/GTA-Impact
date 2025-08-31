@@ -36,16 +36,31 @@ public abstract class SpawnerGeneral<T> : TrungMonoBehaviour where T : PoolObj
         return newObject;
     }
 
+
+
+    #region Load Components
+
     protected virtual void LoadHoldParent()
     {
         if (this.holderParent != null) return;
         this.holderParent = this.transform;
     }
+    #endregion
+
+
     public virtual void SetHoldParent(Transform parent)
     {
         this.holderParent = parent;
     }
+
+
+
     protected virtual bool ReachLimitObjsInPool() => this.holderParent.gameObject.transform.childCount >= limitObjsInPool;
+
+
+
+
+
     public virtual T Spawn(T prefab, Vector3 position)
     {
         T newObject = this.Spawn(prefab);
@@ -74,6 +89,8 @@ public abstract class SpawnerGeneral<T> : TrungMonoBehaviour where T : PoolObj
     {
         this.inPoolObjs.Remove(obj);
     }
+
+
     protected virtual void UpdateName(Transform prefab,Transform newPrefab)
     {
         newPrefab.name = prefab.name/* + "_" + spawnCount*/;
